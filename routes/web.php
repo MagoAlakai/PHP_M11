@@ -62,7 +62,7 @@ Route::prefix('employees')->group(function () {
     //Routes delete
     Route::prefix('delete/{id}')->group(function () {
         Route::get('/', [DeleteController::class, 'index']);
-        Route::delete('/', [DeleteController::class, 'edit']);
+        Route::delete('/', [DeleteController::class, 'delete']);
     });
 });
 

@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h3 class="container text-center mt-5 mb-3">Login usuario</h3>
+<h3 class="container text-center mt-5 mb-3">User Login</h3>
 
 <form method="POST" class="row col-8 mx-auto form">
     @csrf
@@ -22,5 +22,9 @@
     </div>
     <button type="submit" class="btn btn-primary col-8 mx-auto">Submit</button>
   </form>
+
+  <div class="mt-3 d-flex justify-content-center">
+    <a class="" href="password">Did you forget your password?</a>
+</div>
 
 @endsection
