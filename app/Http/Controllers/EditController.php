@@ -12,13 +12,13 @@ class EditController extends Controller
 
     public function edit(Request $request) {
         $request->validate([
-          'name' => 'required',
-          'author' => 'required',
-          'year' => 'required|integer'
-        ],[
-            'name.required' => 'El campo name es obligatorio!',
-            'year.integer' => 'Please insert only numbers!',
-            'year.required' => 'The year field is mandatory!'
-        ]);
+            'name' => 'required',
+            'email' => 'required|email',
+            'phone' => 'required|integer',
+            'department' => 'required',
+            'job' => 'required',
+          ]);
+
+        return view('employees');
     }
 }

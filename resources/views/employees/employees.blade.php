@@ -27,6 +27,7 @@
             <td>Account Department</td>
             <td>Account Manager</td>
             <td class="d-inline-flex">
+                <a href="employees/show/id"><i class="far fa-lg fa-eye me-4 " style="color:rgb(86, 170, 80)";></i></a>
                 <a href="employees/edit/id"><i class="far fa-lg fa-edit me-4"></i></a>
                 <a href=""><i class="far fa-lg fa-trash-alt me-4" style="color:rgb(209, 64, 64);"></i></a>
             </td>
@@ -39,6 +40,7 @@
             <td>Account Department</td>
             <td>Account Manager</td>
             <td class="d-inline-flex">
+                <a href="employees/show/id"><i class="far fa-lg fa-eye me-4 " style="color:rgb(86, 170, 80)";></i></a>
                 <a href="employees/edit/id"><i class="far fa-lg fa-edit me-4"></i></a>
                 <a href=""><i class="far fa-lg fa-trash-alt me-4" style="color:rgb(209, 64, 64);"></i></a>
             </td>
@@ -51,6 +53,7 @@
             <td>Account Department</td>
             <td>Account Manager</td>
             <td class="d-inline-flex">
+                <a href="employees/show/id"><i class="far fa-lg fa-eye me-4 " style="color:rgb(86, 170, 80)";></i></a>
                 <a href="employees/edit/id"><i class="far fa-lg fa-edit me-4"></i></a>
                 <a href=""><i class="far fa-lg fa-trash-alt me-4" style="color:rgb(209, 64, 64);"></i></a>
             </td>

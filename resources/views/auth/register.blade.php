@@ -15,18 +15,18 @@
     </div>
     <div class="d-flex justify-content-center mb-2">
         <div class="mb-3 col-4">
-            <label class="form-label">Passport</label>
-            <input type="text" class="form-control @error('passport') is-invalid @enderror" id="passport" name="passport">
-            @error('passport')
-                <div class="alert alert-danger">{{ $message }}</div>
-            @enderror
-        </div>
-        <div class="mb-3 col-4">
             <label class="form-label">Email</label>
             <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email">
             @error('email')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
+        </div>
+        <div class="mb-3 col-4">
+            <label class="form-label">Administrator</label>
+            <select class="selectpicker form-control"  id="admin" name="admin">
+                <option>No</option>
+                <option>Yes</option>
+            </select>
         </div>
     </div>
     <div class="d-flex justify-content-center mb-2">

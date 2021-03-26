@@ -15,7 +15,6 @@ class RegisterController extends Controller
 
         $request->validate([
             'name' => 'required',
-            'passport' => 'required',
             'email' => 'required|email',
             'password' => 'required',
             'confirmPassword' => 'required',
@@ -24,10 +23,12 @@ class RegisterController extends Controller
         $name = $request->input('name');
 
         if($name !== null){
+            //TODO: solucionar alerts Sweet Alert
             Alert::success('Your registration has been successful!', 'You Will be redirect to the login page!');
         }else{
             return redirect('error404');
         }
+        //TODO: solucionar redireccion
         return redirect('login');
     }
 }

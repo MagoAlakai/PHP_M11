@@ -16,16 +16,33 @@
     </div>
     <div class="d-flex justify-content-center mb-2">
         <div class="mb-3 col-4">
-            <label class="form-label">Author</label>
-            <input type="text" class="form-control @error('author') is-invalid @enderror" id="author" name="author">
-            @error('author')
+            <label class="form-label">Email</label>
+            <input type="email" id="email" name="email" class="form-control @error('email') is-invalid @enderror">
+            @error('email')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
         </div>
         <div class="mb-3 col-4">
-            <label class="form-label">Year</label>
-            <input type="text" class="form-control @error('year') is-invalid @enderror" id="year" name="year">
-            @error('year')
+            <label class="form-label">Phone</label>
+            <input type="text" id="phone" name="phone" class="form-control @error('phone') is-invalid @enderror">
+            @error('phone')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+        </div>
+    </div>
+    <!--TODO:averiguar cómo seleccionar de department y jobs ya creados.-->
+    <div class="d-flex justify-content-center mb-2">
+        <div class="mb-3 col-4">
+            <label class="form-label">Department</label>
+            <input type="text" class="form-control @error('department') is-invalid @enderror" id="department" name="department">
+            @error('department')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+        </div>
+        <div class="mb-3 col-4">
+            <label class="form-label">Job</label>
+            <input type="text" class="form-control @error('job') is-invalid @enderror" id="job" name="job">
+            @error('job')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
         </div>

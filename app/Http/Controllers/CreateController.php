@@ -13,23 +13,13 @@ class CreateController extends Controller
     public function create(Request $request) {
         $request->validate([
             'name' => 'required',
-            'author' => 'required',
-            'year' => 'required|integer'
-          ],[
-              'name.required' => 'El campo name es obligatorio!',
-              'year.integer' => 'Please insert only numbers!',
-              'year.required' => 'The year field is mandatory!'
+            'email' => 'required|email',
+            'phone' => 'required|integer',
+            'department' => 'required',
+            'job' => 'required',
           ]);
 
-        $name = $request->input('name');
-        $author = $request->input('author');
-        $year = $request->input('year');
-        $newBook = [
-            'name' => $name,
-            'author' => $author,
-            'year' => $year];
-
-        return view('employees')->with($newBook);
+        return view('employees');
 
     }
 }
