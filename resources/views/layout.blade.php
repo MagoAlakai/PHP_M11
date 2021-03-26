@@ -13,6 +13,9 @@
     <!-- Bootstrap core CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Favicons -->
 <link rel="apple-touch-icon" href="/docs/5.0/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
@@ -50,20 +53,13 @@
   <!-- Fixed navbar -->
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
-        @if(Cookie::get('login'))
-            <a class="navbar-brand" href="#">{{ Cookie::get('login') }}</a>
-        @else
-             <a class="navbar-brand" href="#">Welcome</a>
-        @endif
-
-        //TODO: ver cómo subir una imagen a laravel
-        <a class="navbar-brand" href="#">
-            <img src={{('public/images/IT logo.png')}} alt="Logo" width="30" height="24">
-        </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
+        <a class="navbar-brand" href="#">
+            <img src={{Storage::url("images/IT_logo.png")}} alt="Logo" width="80" height="24">
+        </a>
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
           <li class="nav-item">
             <a class="nav-link active" href="/">Home</a>
@@ -75,6 +71,12 @@
             <a class="nav-link active" href="login">Login</a>
           </li>
         </ul>
+            <div class="d-flex align-items-center me-5">
+                @if(Cookie::get('login'))
+                    <h6 class="navbar-brand">{{ Cookie::get('login') }}</h6>
+                @endif
+                <img src={{Storage::url("images/user.png")}} alt="User"width="30" height="30">
+            </div>
         <form class="d-flex">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Search</button>

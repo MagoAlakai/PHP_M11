@@ -27,8 +27,8 @@
             <td>Account Department</td>
             <td>Account Manager</td>
             <td class="d-inline-flex">
-                <a href="employees/edit/id"><button type="button" class="btn btn-sm btn-success m-1">Update</button></a>
-                <a href=""><button type="button" class="btn btn-sm btn-danger m-1">Delete</button></a>
+                <a href="employees/edit/id"><i class="far fa-lg fa-edit me-4"></i></a>
+                <a href=""><i class="far fa-lg fa-trash-alt me-4" style="color:rgb(209, 64, 64);"></i></a>
             </td>
           </tr>
           <tr class="align-middle">
@@ -39,8 +39,8 @@
             <td>Account Department</td>
             <td>Account Manager</td>
             <td class="d-inline-flex">
-                <a href="employees/edit/id"><button type="button" class="btn btn-sm btn-success m-1">Update</button></a>
-                <a href=""><button type="button" class="btn btn-sm btn-danger m-1">Delete</button></a>
+                <a href="employees/edit/id"><i class="far fa-lg fa-edit me-4"></i></a>
+                <a href=""><i class="far fa-lg fa-trash-alt me-4" style="color:rgb(209, 64, 64);"></i></a>
             </td>
           </tr>
           <tr class="align-middle">
@@ -51,8 +51,8 @@
             <td>Account Department</td>
             <td>Account Manager</td>
             <td class="d-inline-flex">
-                <a href="employees/edit/id"><button type="button" class="btn btn-sm btn-success m-1">Update</button></a>
-                <a href=""><button type="button" class="btn btn-sm btn-danger m-1">Delete</button></a>
+                <a href="employees/edit/id"><i class="far fa-lg fa-edit me-4"></i></a>
+                <a href=""><i class="far fa-lg fa-trash-alt me-4" style="color:rgb(209, 64, 64);"></i></a>
             </td>
           </tr>
         </tbody>
