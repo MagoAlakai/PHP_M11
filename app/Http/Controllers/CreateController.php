@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
+use App\Models\Employee;
 
 class CreateController extends Controller
 {
@@ -19,7 +21,24 @@ class CreateController extends Controller
             'job' => 'required',
           ]);
 
-        return view('employees');
+          $name = $request->input('name');
+          $email = $request->input('email');
+          $phone = $request->input('phone');
+          $department = $request->input('department');
+          $job = $request->input('job');
 
+          if($name !== null && $email !== null && $phone !== null && $department !== null && $job !== null){
+            Employee::create([
+                'name'=> $name,
+                'email'=> $email,
+                'phone'=> $phone,
+                'department'=> $department,
+                'job'=> $job,
+            ]);
+              Alert::success('The new employee has been created successfully!')->persistent(true,false);
+              return redirect('employees');
+          }else{
+              return redirect('error404');
+          }
     }
 }

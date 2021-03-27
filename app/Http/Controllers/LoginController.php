@@ -20,13 +20,14 @@ class LoginController extends Controller
 
         $name = $request->input('name');
         $password = $request->input('password');
+
         Cookie::queue(Cookie::make('login', $request->name, 60));
+
         if($name !== null && $password !== null){
-            //TODO: solucionar alerts Sweet Alert
-            Alert::success('Your login has been successful!', 'You Will be redirect to your personal account!');
+            Alert::success('Your login has been successful!', 'You will be redirect to your personal account!')->persistent(true,false);
+            return redirect('employees');
         }else{
             return redirect('error404');
         }
-        return redirect('employees');
     }
 }

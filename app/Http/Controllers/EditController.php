@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class EditController extends Controller
 {
@@ -17,8 +18,20 @@ class EditController extends Controller
             'phone' => 'required|integer',
             'department' => 'required',
             'job' => 'required',
-          ]);
+        ]);
 
-        return view('employees');
+        $name = $request->input('name');
+        $email = $request->input('email');
+        $phone = $request->input('password');
+        $department = $request->input('password');
+        $job = $request->input('password');
+
+        if($name !== null && $email !== null && $phone !== null && $department !== null && $job !== null){
+            Alert::success('The update has been successful!')->persistent(true,false);
+            return redirect('employees');
+        }else{
+            return redirect('error404');
+        }
+
     }
 }

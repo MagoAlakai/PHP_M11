@@ -18,13 +18,9 @@ class CreateEmployeesTable extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('phone');
-            $table->unsignedBigInteger('department_id');
-            $table->unsignedBigInteger('job_id');
+            $table->string('department');
+            $table->string('job');
             $table->timestamps();
-
-            //Referenciar de donde viene la clave foránea
-            $table->foreign('department_id')->references('id')->on('departments');
-            $table->foreign('job_id')->references('id')->on('jobs');
         });
     }
 

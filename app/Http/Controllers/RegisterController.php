@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\Cookie;
+use App\Models\User;
 
 class RegisterController extends Controller
 {
@@ -21,14 +23,31 @@ class RegisterController extends Controller
           ]);
 
         $name = $request->input('name');
+        $email = $request->input('email');
+        $password = $request->input('password');
+        $admin = $request->input('admin');
 
-        if($name !== null){
-            //TODO: solucionar alerts Sweet Alert
-            Alert::success('Your registration has been successful!', 'You Will be redirect to the login page!');
+        if($admin == 'Yes'){
+            $admin_verified = true;
+        }elseif($admin == 'No'){
+            $admin_verified = false;
+        };
+
+        Cookie::queue(Cookie::make('login', $name, 60));
+        Cookie::queue(Cookie::make('admin', $admin_verified, 60));
+
+        if($name !== null && $email !== null && $password !== null){
+            User::create([
+                'name'=> $name,
+                'email'=> $email,
+                'password'=> bcrypt($password),
+                'admin'=> $admin_verified,
+            ]);
+
+            Alert::success('Your registration has been successful!', 'You will be redirect to your account page!')->persistent(true,false);
+            return redirect('employees');
         }else{
             return redirect('error404');
         }
-        //TODO: solucionar redireccion
-        return redirect('login');
     }
 }

@@ -7,6 +7,7 @@ use App\Http\Controllers\EmployeesController;
 use App\Http\Controllers\EditController;
 use App\Http\Controllers\CreateController;
 use App\Http\Controllers\ShowController;
+use App\Http\Controllers\DeleteController;
 
 //Auth
 use App\Http\Controllers\LoginController;

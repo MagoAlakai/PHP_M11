@@ -13,16 +13,7 @@ class Employee extends Model
         'name',
         'email',
         'phone',
-        'department_id',
-        'job-id',
+        'department',
+        'job',
     ];
-
-    //Funcion para definir la relación entre modelo Employee y modelos Department y Job
-    public function jobs(){ // Employee tiene la clave foránea de job_id: belongsTo()
-        return $this->belongsTo(Job::class);
-    }
-
-    public function departments(){ // Employee tiene la clave foránea de job_id: belongsTo()
-        return $this->belongsToy(Department::class);
-    }
 }
