@@ -15,31 +15,43 @@
             <th scope="col">Phone number</th>
             <th scope="col">Department</th>
             <th scope="col">Job</th>
+            @if(Cookie::get('admin') == true)
             <th scope="col">Action</th>
+            @endif
           </tr>
         </thead>
         <tbody>
             @foreach($data as $employee)
             <tr class="align-middle">
-                <th scope="row">1</th>
+                <td><strong>{{$employee->id}}</strong></td>
                 <td>{{$employee->name}}</td>
                 <td>{{$employee->email}}</td>
                 <td>{{$employee->phone}}</td>
                 <td>{{$employee->department}}</td>
                 <td>{{$employee->job}}</td>
-                <td class="d-inline-flex">
-                    <a href="employees/show/id"><i class="far fa-lg fa-eye me-4 " style="color:rgb(86, 170, 80)";></i></a>
-                    <a href="employees/edit/id"><i class="far fa-lg fa-edit me-4"></i></a>
-                    <a href="employees/delete/id"><i class="far fa-lg fa-trash-alt me-4" style="color:rgb(209, 64, 64);"></i></a>
+                @if(Cookie::get('admin') == true)
+                <td class="d-inline-flex justify-content-center align-items-center">
+                    <a href="employees/show/{{$employee->id}}"><i class="far fa-lg fa-eye me-3" style="color:rgb(86, 170, 80)";></i></a>
+                    <a href="employees/edit/{{$employee->id}}"><i class="far fa-lg fa-edit"></i></a>
+                    <form action="employees/delete/{{$employee->id}}" method="POST" type="submit">
+                        @csrf
+                        @method("DELETE")
+                            <button type="submit" class="btn btn-small btn-outline-link">
+                                <i class="far fa-lg fa-trash-alt" style="color:rgb(209, 64, 64);"></i>
+                            </button>
+
+                    </form>
                 </td>
+                @endif
             </tr>
             @endforeach
         </tbody>
     </table>
-
+    @if(Cookie::get('admin') == true)
       <div class="container d-flex justify-content-center">
         <a href="employees/create"><button type="button" class="btn btn-lg btn-primary mt-4">Create new employee</button></a>
       </div>
+    @endif
 </div>
 
 @endsection

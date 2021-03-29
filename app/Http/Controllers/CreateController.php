@@ -15,7 +15,7 @@ class CreateController extends Controller
     public function create(Request $request) {
         $request->validate([
             'name' => 'required',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:employees,email',
             'phone' => 'required|integer',
             'department' => 'required',
             'job' => 'required',

@@ -70,11 +70,9 @@
           <li class="nav-item">
             <a class="nav-link active" href="login">Login</a>
           </li>
-          @if(Cookie::get('admin') == true)
           <li class="nav-item">
             <a class="nav-link active" href="employees">Employees</a>
           </li>
-          @endif
         </ul>
             <div class="d-flex align-items-center me-5">
                 @if(Cookie::get('login'))

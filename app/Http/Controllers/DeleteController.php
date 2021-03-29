@@ -3,14 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Employee;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class DeleteController extends Controller
 {
-    public function index($id){
-        return "Deleting employee $id";
-    }
+    public function delete($id){
 
-    public function delete(Request $request){
-        return view('employees');
+        $employee = Employee::find($id);
+        $name = $employee->name;
+
+        $employee->delete();
+
+        Alert::success('You have deleted the employee: '.$name.'.')->persistent(true,false);
+        return redirect('employees');
     }
 }

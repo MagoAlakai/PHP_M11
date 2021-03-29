@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class PasswordController extends Controller
 {
@@ -14,19 +15,17 @@ class PasswordController extends Controller
 
         $request->validate([
             'password' => 'required',
-            'newpassword' => 'required',
+            'newpassword' => 'required | same:password',
         ],[
-            'newpassword.required' => 'The new password field is required'
+            'newpassword.required' => 'The new password field is required',
+            'newpassword.same' => "The two passwords don't match!"
         ]);
 
         $password = $request->input('newpassword');
 
         if($password !== null){
-            echo "
-            <div class='container mt-4 w-50 alert alert-success'>
-                <p class='text-center'>Your password has been reset!</p>
-            </div>
-            ";
+            Alert::success('Your password has been updated successfully!')->persistent(true,false);
+            return redirect('employees');
         }else{
             return redirect('error404');
         }

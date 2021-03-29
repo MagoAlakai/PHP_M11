@@ -17,10 +17,13 @@ class RegisterController extends Controller
 
         $request->validate([
             'name' => 'required',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:users,email',
             'password' => 'required',
-            'confirmPassword' => 'required',
-          ]);
+            'confirmPassword' => 'required | same:password',
+        ], [
+            'email.unique' => 'This mail is already registered!',
+            'confirmPassword.same' => "The two passwords don't match!"
+        ]);
 
         $name = $request->input('name');
         $email = $request->input('email');
