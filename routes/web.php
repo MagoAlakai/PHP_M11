@@ -52,6 +52,10 @@ Route::prefix('employees')->group(function () {
         Route::post('/', [CreateController::class, 'create']);
     });
 
+    //Route filter by job
+    Route::get('job', [EmployeesController::class, 'jobFilter'])->name('employees.job');
+
+    //Route show employee
     Route::get('show/{id}', [ShowController::class, 'index']);
 
     //Routes update

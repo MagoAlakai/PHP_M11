@@ -4,11 +4,10 @@
 @section('content')
 
 <h3 class="container text-center mt-5">Employees List</h3>
-
 <div class="container mt-4">
     <table class="table">
         <thead>
-          <tr>
+        <tr>
             <th scope="col">#</th>
             <th scope="col">Name</th>
             <th scope="col">Email</th>
@@ -18,7 +17,7 @@
             @if(Cookie::get('admin') == true)
             <th scope="col">Action</th>
             @endif
-          </tr>
+        </tr>
         </thead>
         <tbody>
             @foreach($data as $employee)
@@ -47,10 +46,11 @@
             @endforeach
         </tbody>
     </table>
+
     @if(Cookie::get('admin') == true)
-      <div class="container d-flex justify-content-center">
-        <a href="employees/create"><button type="button" class="btn btn-lg btn-primary mt-4">Create new employee</button></a>
-      </div>
+    <div class="container d-flex justify-content-center">
+        <a href="employees/create"><button type="button" class="btn btn-outline-primary mt-4">Create new employee</button></a>
+    </div>
     @endif
 </div>
 

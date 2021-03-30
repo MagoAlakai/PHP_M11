@@ -20,7 +20,7 @@
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
-    <button type="submit" class="btn btn-primary col-8 mx-auto">Submit</button>
+    <button type="submit" class="btn btn-outline-primary col-8 mt-3 mx-auto">Reset Password</button>
   </form>
 
 @endsection

@@ -45,7 +45,7 @@
             @enderror
         </div>
     </div>
-    <button type="submit" class="btn btn-primary col-8 mx-auto">Submit</button>
+    <button type="submit" class="btn btn-outline-primary col-8 mx-auto">Register</button>
   </form>
 
 @endsection

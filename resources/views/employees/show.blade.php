@@ -16,7 +16,7 @@
     </ul>
 
     <div class="container d-flex justify-content-center">
-        <a href="{{url('/employees')}}"><button type="button" class="btn btn-lg btn-primary mt-4">Back to Employees List</button></a>
+        <a href="{{url('/employees')}}"><button type="button" class="btn btn-outline-primary mt-4">Back to Employees List</button></a>
     </div>
 </div>
 

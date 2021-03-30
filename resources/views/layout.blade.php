@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.80.0">
-    <title>@yield('title')</title>
+    <title>Employees</title>
 
 
     <!-- Bootstrap core CSS -->
@@ -80,9 +80,9 @@
                 @endif
                 <img src={{Storage::url("images/user.png")}} alt="User"width="30" height="30">
             </div>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
+        <form class="d-flex" method="GET" action="{{ route('employees.job') }}">
+            <input class="form-control me-2" type="search" placeholder="Search by job!" aria-label="Search by job!" id="jobFilter" name="jobFilter">
+            <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
       </div>
     </div>
